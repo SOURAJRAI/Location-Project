@@ -1,0 +1,91 @@
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.Nav-Container-left{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+      font-family: "Josefin Sans", sans-serif;
+ 
+    
+}
+.logo-icon-button{
+    background-color: rgb(40, 58, 255);
+    border: none;
+    border-radius: 50%;
+    padding:5px 6px ;
+    /* margin: 10px; */
+}
+
+.logo-icon{
+    color: white;
+    padding: 0;
+
+}
+
+.logo-text h2{
+    margin: 0;
+    font-size: 26px;
+    color :#2aad40;
+  
+}
+.logo-text p{
+    margin: 0;
+    font-size: 10px;
+    color: #b3b3b3;
+}
+.logo-text{
+    text-align: center;
+}
+
+.button-groups{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 10px;
+    gap: 12px;
+      
+
+    
+
+}
+
+.nav-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    color: #616161;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+}   
+
+.nav-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px ;
+}
+
+.Profile-icon{
+     border-radius: 50%;
+     border:none;
+     color:#e38305 ;
+     background-color: #fbeac8;
+     padding: 10px 14px;
+     font-weight: 600;
+    
+}

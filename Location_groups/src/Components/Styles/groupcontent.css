@@ -1,0 +1,107 @@
+small{
+    padding:5px 10px 0 0;
+    display: flex;
+    gap: 4px;
+}
+
+.text-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.drill-right {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  overflow-x: auto;
+  max-height: 90vh;
+  padding: 10px;
+}
+
+.drill-column {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-width: 350px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.drill-header {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.drill-header-left{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.drill-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.drill-card:hover {
+  background: #f5f8ff;
+}
+
+.drill-card-header {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.drill-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.icon {
+  color: #3b82f6;
+}
+
+.calendar-icon {
+  color: #2563eb;
+  font-size: 1rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.edit-icon {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.no-data {
+  color: #777;
+  padding: 5px;
+}
