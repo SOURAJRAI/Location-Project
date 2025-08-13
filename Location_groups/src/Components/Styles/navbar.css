@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
+    padding: 0 0 0 20px;
+    
 }
 
 .Nav-Container-left{
@@ -55,6 +57,7 @@
     justify-content: center;
     margin: 0 0 0 10px;
     gap: 12px;
+    
       
 
     
@@ -67,10 +70,10 @@
     align-items: center;
     gap: 5px;
     background-color: white;
-    color: #616161;
+    color: #747474;
     border: none;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }   
 
 .nav-left{

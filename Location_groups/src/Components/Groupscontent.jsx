@@ -1,4 +1,4 @@
-import { Search, ToggleLeftIcon, Trash2 } from "lucide-react";
+import { Calendar, Calendar1, Search, ToggleLeftIcon, Trash2 } from "lucide-react";
 
 import { IoIosPin } from "react-icons/io";
 import './Styles/groupcontent.css'
@@ -60,13 +60,12 @@ const data = [
     groups: []
   }
 ];
-function Groupscontent() {
+function Groupscontent({onAddClick}) {
 
-    // const[selectedItem,setSelectedItem]=useState(null);
       const [path, setPath] = useState([{ levelData: data, title: "Root" }]);
+      
 
   const handleSelect = (item, levelIndex) => {
-    // Slice the path up to current level, then add new level
     const newPath = path.slice(0, levelIndex + 1);
 
     if (item.type === "group") {
@@ -85,7 +84,7 @@ function Groupscontent() {
     setPath((prev) => prev.slice(0, index + 1));
   };
 
-
+  console.log(path);
 
   return (
     <div className="container">
@@ -98,7 +97,7 @@ function Groupscontent() {
 
            <div className="add-section">
           <LiaToggleOnSolid className="upload-icon" size={34} color="#22b363ff"/>
-          <button className="add-location-btn">Add Group</button>
+          <button className="add-location-btn" onClick={onAddClick}>Add Group</button>
             </div>     
         </div>
         <div className="locations-list">
@@ -111,7 +110,7 @@ function Groupscontent() {
                   <h5>{loc.name}</h5>
                     <div className="text-align">
                   <small><IoIosPin color="#2ffd20ff" size={18}/> No. of locations : {loc.locationsCount}</small>
-                  <small><GiPathDistance size={20} color="#4074ff"/> No. of groups : {loc.groupsCount}</small>
+                  <small><GiPathDistance size={20} color="#3169ff"/> No. of groups : {loc.groupsCount}</small>
 
                     </div>
                 </div>
@@ -132,45 +131,58 @@ function Groupscontent() {
             {level.title}
             </div>
             <div>
-             <Trash2 size={20} color="red"/>
+             <Trash2 size={20} color="red" onClick={()=>handleBack(index-1)}/>
             <BiSolidPencil size={20} color="grey"/>
             </div>
             </div>
-          {level.levelData.length > 0 ? (
-            level.levelData.map((item) => (
-              <div
-                key={item.id}
-                className="drill-card"
-                onClick={() =>
-                  !level.isLocationLevel && handleSelect(item, index)
-                }
-              >
-                <div className="drill-card-header">
-                  {item.type === "group" ? (
-                    <MdGroups className="icon" />
-                  ) : (
-                    <FaMapMarkerAlt className="icon" />
-                  )}
-                  {item.name}
-                
-                  {item.type === "location" && (
-                    <FaRegCalendarAlt className="calendar-icon" />
-                  )}
-                </div>
-                {item.type === "group" ? (
-                  <div className="drill-meta">
-                    
-                    <span><FaMapMarkerAlt /> {item.locations.length} locations</span>
-                    <span><MdGroups /> {item.groups.length} groups</span>
-                  </div>
-                ) : (
-                  <div className="drill-meta">{item.address}</div>
-                )}
+         
+          {level.levelData.map((item) => (
+  <div
+    key={item.id}
+    className="drill-card"
+    onClick={() => !level.isLocationLevel && handleSelect(item, index)}
+  >
+    <div className="card-content">
+      <div className="card-left">
+        <div className="card-icon">
+          {item.type === "group" ? <GiPathDistance size={20} /> : <FaMapMarkerAlt size={20} />}
+        </div>
+        <div className="card-details">
+          <h5>{item.name}</h5>
+          {item.type === "group" ? (
+            <div className="card-stats">
+              <div className="stat-row">
+                <FaMapMarkerAlt size={16} color="#4CAF50" /> 
+                <span>No. of locations : {item.locations.length}</span>
               </div>
-            ))
+              <div className="stat-row">
+                <GiPathDistance size={16} color="#4074ff" /> 
+                <span>No. of groups : {item.groups.length}</span>
+              </div>
+            </div>
           ) : (
-            <p className="no-data">No data</p>
+            <div className="card-address">{item.address}</div>
           )}
+        </div>
+      </div>
+   
+    
+         
+      <div className="card-actions">
+       {item.type==="location" &&
+         <Calendar color="#4074ff"/>
+       
+       } 
+      </div>
+       {
+        
+       }
+     
+    </div>
+  </div>
+))}
+
+
         </div>
       ))}
       </div>

@@ -31,7 +31,7 @@ const locationDetails = {
   
 };
 
-export default function Locationcontent() {
+export default function Locationcontent({onAddClick}) {
   return (
     <div className="container">
 
@@ -43,7 +43,7 @@ export default function Locationcontent() {
              <Search className="search-icon" />
            </div>
            <div className="add-section">
-           <button className="add-location-btn">Add Location</button>
+           <button className="add-location-btn" onClick={onAddClick}>Add Location</button>
            <RiFolderUploadFill className="upload-icon" size={34} />
            </div>
          </div>

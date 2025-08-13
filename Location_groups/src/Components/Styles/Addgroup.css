@@ -1,0 +1,263 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 850px;
+  max-height: 85vh;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  background-color: white;
+  /* padding: 24px; */
+  border-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color-scheme: light;
+}
+
+.Group-modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding: 0px 10px;
+}
+.Group-close-btn{
+    background-color: white;
+    border: none;
+}
+.card h3{
+  font-size: 18px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+
+}
+
+
+.close-btn {
+  position: absolute;
+  background-color: white;
+  border: none;
+  font-size: 4px;
+  cursor: pointer;
+  color: #636060;
+  margin: 0 0px 0 0;
+  top: 10px;
+  right: 16px;
+}
+
+.modal-body {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  /* overflow-y: auto; */
+}
+
+.group-modal-footer{
+    border-top: 1px solid #ccc;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.group-add-btn{
+    background-color: #3b5cff;
+    color: white;
+    border: none;
+    padding: 15px 26px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.left-section {
+  flex: 1;
+  padding: 20px 50px 50px 50px ;
+
+  
+}
+
+.right-section {
+    flex: 1;
+  
+  padding: 20px 40px 40px 40px ;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.loc-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  
+}
+
+.search {
+   width: 92%;
+  padding: 15px;
+  /* box-sizing: border-box; */
+
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px ;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input:focus,
+.search:focus{
+   outline: none;
+}
+input[type="checkbox" i]{
+    accent-color: #05aa4d ;
+
+    height: 18px;
+    width: 18px;
+}
+
+
+.label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.location-list {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 300px;
+  scrollbar-width: thin;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.group-location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.loc-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+}
+.loc-info-icon{
+    border: none;
+      background-color: #d0fff6;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.loc-name {
+  font-weight: 600;
+}
+
+.loc-desc {
+  font-size: 12px;
+  color: gray;
+}
+
+
+
+
+
+
+.group-location-section{
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+}
+
+.location-label{
+    font-weight: 500;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.location-input{
+      width: 100%;
+  box-sizing: border-box;
+  padding: 15px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+}
+.location-label span{
+    color: red;
+}
+
+.location-input:focus{
+    outline: none;
+}
+
+.radios {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; 
+  margin-bottom: 20px;
+}
+
+
+.location-input[type="radio"],
+input[type="radio"] {
+    accent-color: #14a800 ;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  background: transparent;
+  display: inline-block;
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.group-search-bar{
+    /* flex:1; */
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 2px 12px;
+}
+
+.group-search-bar input{
+    outline: none;
+    border: none;
+}

@@ -32,7 +32,8 @@ margin:20px 20px 20px 20px;
     align-items: center;
     padding: 10px 10px;
     gap: 15px;
-    color: #0e32fd;
+    font-weight: 600;
+    color: #366dff;
     border: 1px solid;
     border-radius: 5px;
     background-color: #f8f9ff;
@@ -60,7 +61,7 @@ margin:20px 20px 20px 20px;
 .content-wrapper {
    background: white;
   border-radius: 12px;
-  height: calc(90vh - 150px);
+  height: calc(100vh - 220px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -68,10 +69,10 @@ margin:20px 20px 20px 20px;
 
 
 .contents {
-  /* height: calc(100% - 50px); */
+  height: calc(100% - 10px);
   /* overflow-y: auto; */
   /* padding: 20px; */
-  min-height: 500px;
+  /* min-height: 500px; */
 }
 
 

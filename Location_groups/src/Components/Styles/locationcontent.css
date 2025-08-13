@@ -2,13 +2,13 @@
 
  .container {
   display: flex;
-  max-height: 470px;
+  /* max-height: 470px; */
   /* border: 1px solid #ddd; */
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
  
-  height: 500px;
+  height: 100%;
 
 }
 
@@ -39,6 +39,7 @@
 
 .locations-list {
   flex: 1;
+  height: auto;
   overflow-y: auto;
     scrollbar-width: thin;
 }
@@ -52,21 +53,22 @@
 }
 
 .location-icon{
-    color:#4074ff;
-    background-color: #d3dfff;
+    /* color:#4074ff; */
+    color:#1a55fa;
+    background-color: #e3f2fd;
     padding: 10px 10px;
     border-radius: 50%;
     margin-right: 12px;
 }
 .location-item h5,p{
     margin: 10px;
-    color: #444444;
+    color: #0a0a0a;
 }
 .location-item h5{
-    font-size: 14px;
+    font-size: 15px;
 }
 .location-item p{
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .location-item:hover {
@@ -176,11 +178,12 @@
 }
 
 .add-location-btn{
-    background: #0e32fd;
+    background: #2863ff;
     color:white;
     border: none;
+    font-weight: 600;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 12px 20px;
 
 }
 

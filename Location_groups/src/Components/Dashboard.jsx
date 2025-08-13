@@ -8,10 +8,13 @@ import Locationcontent from "./Locationcontent";
 import Groupscontent from "./Groupscontent";
  import { RiFolderUploadFill } from "react-icons/ri";
 import { PiToggleRightFill } from "react-icons/pi";
+import AddGroupModal from "./AddGroupModal";
 
 function Dashboard() {
 
       const[activeTab,setActiveTab]=useState('locations');
+      const[showModal,setShowModal]=useState(false);
+
 
   return (
     <>
@@ -38,27 +41,24 @@ function Dashboard() {
         <button className={`btn ${activeTab==='locations'?'active':''}`}  onClick={()=>setActiveTab('locations')}>LOCATIONS</button>
         <button className={`btn ${activeTab==='groups'?'active':''}`} onClick={()=>setActiveTab('groups')}>GROUPS</button>
       </div>
-      {/* <div className="contents">
-      {activeTab==='locations'?(
-        <Locationcontent/>
-      ):(
-        <Groupscontent/>
-      )}
 
-      </div> */}
         <div className="content-wrapper">
     
 
         <div className="contents">
           {activeTab==='locations'?(
-            <Locationcontent/>
+            <Locationcontent onAddClick={()=>setShowModal(true)}/>
           ):(
-            <Groupscontent/>
+            <Groupscontent onAddClick={()=>setShowModal(true)}/>
           )}
         </div>
       </div>
 
       </div>
+            {showModal&&
+            <AddGroupModal onClose={()=>setShowModal(false)} title={activeTab}/>
+            }
+      
     
     </>
   );
