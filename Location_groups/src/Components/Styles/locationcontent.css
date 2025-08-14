@@ -218,3 +218,67 @@
 .locations-list::-webkit-scrollbar-track {
   background: #f1f1f1; /* Track color */
 }
+
+.overlay-delete {
+    position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  
+}
+.modal-delete{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 450px;
+  max-height: 85vh;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 14px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color-scheme: light;
+    padding: 20px 24px;
+  /* display: flex;
+ flex-direction: column; */
+}
+.modal-header-delete {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.modal-actions{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 27px 18px;
+}
+
+.btn-outline{
+  background-color: #fff;
+  border: 1px solid #cecece;
+  color: #7c7c7c;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  
+}
+.btn-danger{
+  background-color: #f07373;
+  border: 1px solid #cbd5e1;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+
+}
+.modal-delete p{
+  color: #7e7e7e;
+  font-size: 14px;
+  margin-bottom: 12px;
+}

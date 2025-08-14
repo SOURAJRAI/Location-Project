@@ -7,85 +7,132 @@ import { PiMapPinFill } from "react-icons/pi";
 import { BiSolidPencil } from "react-icons/bi";
 import { IoIosPin } from "react-icons/io";
 
-import React from "react";
+import React, { useState } from "react";
 import "./Styles/locationcontent.css";
-import { Search, Trash2 } from "lucide-react";
+import { AlertCircle, Search, Trash2 } from "lucide-react";
 
-const locations = [
-  { id: 1, name: "Globall245", address: "Bommasandra, Bangalore" },
-  { id: 2, name: "1 All dps-new", address: "ssssdgf" },
-  { id: 3, name: "23", address: "VC" },
-  { id: 4, name: "354", address: "3" },
-  { id: 5, name: "3Mar2025 session check", address: "dd" },
-  { id: 6, name: "45", address: "56" },
-  { id: 7, name: "54343dfd", address: "rest uhus..." },
-  { id: 8, name: "A LOCATION FEAT", address: "test" },
-];
 
-const locationDetails = {
 
-  "Asset Name": "3Mar2025 session check",
-  "Asset Type": "Plant",
-  "Country":"-",
-  "Address": "dd",
-  
-};
+export default function Locationcontent({ onAddClick, locations,onDelete }) {
+  const [selectedId, setSelectedId] = useState();
 
-export default function Locationcontent({onAddClick}) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredLocations = locations.filter(
+    (loc) =>
+      loc.assetname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      loc.address.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const modifiedSelected = selectedId
+    ? {
+        "Asset Name": selectedId.assetname,
+        "Asset Type": selectedId.assettype,
+        Country: selectedId.country,
+        Address: selectedId.address,
+      }
+    : {};
+
+  console.log("modifiedArray", modifiedSelected);
+
+  console.log("selectedId", selectedId);
+  console.log(locations);
+
+  const [openDelete, setOpenDelete] = useState(false);
+  const confirmDelete = async ()=>{
+      setSelectedId(null);
+        setOpenDelete(false);
+        await onDelete(selectedId._id)
+  }
+
   return (
     <div className="container">
-
       <div className="locations-panel">
-      
-          <div className="search-section">
-           <div className="search-bar">
-             <input type="text" placeholder="search" />
-             <Search className="search-icon" />
-           </div>
-           <div className="add-section">
-           <button className="add-location-btn" onClick={onAddClick}>Add Location</button>
-           <RiFolderUploadFill className="upload-icon" size={34} />
-           </div>
-         </div>
+        <div className="search-section">
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="search"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <Search className="search-icon" />
+          </div>
+          <div className="add-section">
+            <button className="add-location-btn" onClick={onAddClick}>
+              Add Location
+            </button>
+            <RiFolderUploadFill className="upload-icon" size={34} />
+          </div>
+        </div>
         <div className="locations-list">
-          {locations.map((loc) => (
-            <div key={loc.id} className="location-item">
-                 <div className="location-icon">
-                   
-                    <IoIosPin size={20}/>
-                 </div>
-                 <div>
-              <h5>{loc.name}</h5>
-              <p>{loc.address}</p>
-                 </div>
+          {filteredLocations.map((loc) => (
+            <div
+              key={loc._id}
+              className="location-item"
+              onClick={() => setSelectedId(loc)}
+            >
+              <div className="location-icon">
+                <IoIosPin size={20} />
+              </div>
+              <div>
+                <h5>{loc.assetname}</h5>
+                <p>{loc.address}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Right Panel */}
-      <div className="details-panel">
-        <div className="detail-header">
-          <div className="left-header">
-          <IoIosPin className="location-icon"/>
-          <h3>3Mar2025 session check</h3>
-          </div>
-          <div className="right-header">
-            <Trash2 size={20} color="red"/>
-            <BiSolidPencil size={20} color="grey"/>
-          </div>
-        </div>
-        <h4>Location Information</h4>
-        <div className="details-scroll">
-          {Object.entries(locationDetails).map(([key, value]) => (
-            <div key={key} className="detail-row">
-        
-              <span className="detail-key">{key}</span>
-              <span className="detail-value">{value}</span>
+      {selectedId && (
+        <div className="details-panel">
+          <div className="detail-header">
+            <div className="left-header">
+              <IoIosPin className="location-icon" />
+              <h3>3Mar2025 session check</h3>
             </div>
-          ))}
+            <div className="right-header">
+              <Trash2
+                size={20}
+                color="red"
+                onClick={() => setOpenDelete(true)}
+              />
+              <BiSolidPencil size={20} color="grey" />
+            </div>
+          </div>
+          <h4>Location Information</h4>
+          <div className="details-scroll">
+            {/* {selectedId.map((item,index)=>{ */}
+            {Object.entries(modifiedSelected).map(([key, value]) => (
+              <div key={key} className="detail-row">
+                <span className="detail-key">{key}</span>
+                <span className="detail-value">{value}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+      {openDelete && (
+        <>
+          <div
+            className="overlay-delete"
+            onClick={() => setOpenDelete(false)}
+          ></div>
+          <div className="modal-delete">
+            <div className="modal-header-delete">
+              <AlertCircle color="#e53935" size={32}/>
+              <h2>Delete Confirmation</h2>
+            </div>
+            <p>Once deleted, the data cannot be recovered.</p>
+            <p>Are you sure you want to proceed?</p>
+          <div className="modal-actions">
+            <button className="btn-outline" onClick={()=>setOpenDelete(false)}>Cancel</button>
+            <button className="btn-danger" onClick={
+              confirmDelete
+            }>Delete</button>
+          </div>
+
+          </div>
+        </>
+      )}
     </div>
   );
 }
