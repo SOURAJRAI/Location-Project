@@ -49,11 +49,12 @@ margin:20px 20px 20px 20px;
     background-color: white;
     border: 1px solid #ececec;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
 }
 .btn.active{
-    background-color: #f8f9ff;
-    color:#0e32fd
+    background-color: #e7eaff;
+    color:#0e32fd;
+    border: 1px solid #e7eaff;
 
 }
 

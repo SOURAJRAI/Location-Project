@@ -141,7 +141,7 @@ function AddGroupModal({ onClose, title, locations ,groups,onCreateLoction,onCre
             <X className="group-close-icon" strokeWidth={4} color="black" />
           </button>
         </div>
-        <div className="modal-body">
+        <div className="modal-body-group">
           {title === "groups" ? (
             <>
               <div className="left-section">

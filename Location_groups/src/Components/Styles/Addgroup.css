@@ -11,15 +11,28 @@
   left: 50%;
   width: 90%;
   max-width: 850px;
-  max-height: 85vh;
+  /* max-height: 85vh; */
   transform: translate(-50%, -50%);
   overflow-y: auto;
   background-color: white;
   /* padding: 24px; */
   border-radius: 8px;
   z-index: 1000;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  color-scheme: light;
+
+
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh;
+
+}
+.modal-body-group {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+
+  flex: 1 ;
 }
 
 .Group-modal-header{
@@ -151,7 +164,7 @@ input[type="checkbox" i]{
 .location-list {
   border: 1px solid #ddd;
   border-radius: 4px;
-  /* max-height: 300px; */
+  max-height: 320px;
   scrollbar-width: thin;
   overflow-y: auto;
   /* flex: 1; */

@@ -16,7 +16,7 @@ function Navbar() {
     <div className="Nav-Container-left">
       <div className="nav-logo">
         <button className="logo-icon-button">
-          <ChartNoAxesColumn className="logo-icon" />
+          <ChartNoAxesColumn className="logo-icon" size={30}/>
         </button>
         <div className="logo-text">
           <h2>updapt</h2>

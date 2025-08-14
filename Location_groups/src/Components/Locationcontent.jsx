@@ -70,7 +70,7 @@ export default function Locationcontent({ onAddClick, locations,onDelete }) {
               onClick={() => setSelectedId(loc)}
             >
               <div className="location-icon">
-                <IoIosPin size={20} />
+                <IoIosPin size={24} />
               </div>
               <div>
                 <h5>{loc.assetname}</h5>

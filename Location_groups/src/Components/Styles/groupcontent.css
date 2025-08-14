@@ -16,6 +16,7 @@ small{
   gap: 1rem;
   align-items: flex-start;
   overflow-x: auto;
+  scrollbar-width: thin;
   max-height: 90vh;
   padding: 10px;
 }

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-    padding: 0 0 0 20px;
+    padding: 0px 0 0px 20px;
     
 }
 
@@ -19,6 +19,7 @@
     align-items: center;
     gap: 5px;
       font-family: "Josefin Sans", sans-serif;
+      
  
     
 }
@@ -38,7 +39,7 @@
 
 .logo-text h2{
     margin: 0;
-    font-size: 26px;
+    font-size: 35px;
     color :#2aad40;
   
 }
@@ -72,7 +73,7 @@
     background-color: white;
     color: #747474;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }   
 
@@ -89,6 +90,7 @@
      color:#e38305 ;
      background-color: #fbeac8;
      padding: 10px 14px;
+     font-size: 18px;
      font-weight: 600;
     
 }
